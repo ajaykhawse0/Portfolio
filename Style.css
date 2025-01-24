@@ -510,186 +510,120 @@ a{
 
 /* Default styles are mostly for desktop */
 
-/* Mobile Devices */
+/* Existing CSS remains the same, adding new responsive styles */
+
+/* Responsive Navigation */
 @media screen and (max-width: 768px) {
-    /* Adjust the navbar layout for small screens */
     nav {
         flex-direction: column;
+        position: relative;
         padding: 1rem;
-        align-items: flex-start;
     }
 
     nav ul {
+        display: none; /* Hidden by default */
         flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
+        width: 100%;
+        text-align: center;
     }
 
-    .logo {
-        font-size: 1.3rem;
+    /* Hamburger Menu */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
     }
 
-    /* Content layout adjustment */
-    .content {
-        flex-direction: column;
-        padding: 1rem;
-        margin-top: 80px;
+    .hamburger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: 0.4s;
     }
 
-    .content h1 {
-        font-size: 1.8rem;
-    }
-
-    .profile-img {
-        width: 150px;
-        height: 150px;
-    }
-
-    /* Skills Section */
-    .skills {
-        padding: 2rem;
-    }
-
-    .skill-grid {
-        grid-template-columns: 1fr; /* Stack skills vertically */
-        gap: 2rem;
-    }
-
-    .skill-item {
-        padding: 1.5rem;
-    }
-
-    .projects .project-grid {
-        grid-template-columns: 1fr; /* Stack projects vertically */
-    }
-
-    .project-card {
-        padding: 1rem;
-    }
-
-    .project-card img {
-        height: 150px;
-    }
-
-    /* Contact Section */
-    #contact {
-        padding: 2rem;
-        margin: 1rem;
-    }
-
-    .contact-form-container {
-        padding: 1.5rem;
-        margin-top: 3rem;
-    }
-
-    .contact-form-container h3 {
-        font-size: 1.5rem;
-    }
-
-    .form-input, .form-textarea {
-        font-size: 0.9rem;
-    }
-
-    .form-btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 1rem;
+    nav.active ul {
+        display: flex;
     }
 }
 
-/* Tablet Devices */
-@media screen and (max-width: 1024px) {
-    /* Adjust the navbar layout for tablet screens */
-    nav {
-        padding: 1.5rem;
-    }
-
-    .logo {
-        font-size: 1.4rem;
-    }
-
-    /* Content layout adjustment */
+/* Responsive Content Layout */
+@media screen and (max-width: 768px) {
     .content {
         flex-direction: column;
-        margin-top: 80px;
-    }
-
-    .content h1 {
-        font-size: 2rem;
-    }
-
-    .profile-img {
-        width: 180px;
-        height: 180px;
+        align-items: center;
+        text-align: center;
     }
 
     .profile-description {
-        padding-right: 30px;
+        text-align: center;
+        padding-right: 0;
+        align-items: center;
     }
 
-    /* Skills Section */
-    .skills {
-        padding: 3rem 1rem;
+    .profile-img {
+        margin-bottom: 20px;
     }
 
-    .skill-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .skills, .projects {
+        padding: 2rem 1rem;
     }
 
-    /* Project Grid Adjustments */
-    .projects .project-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .skill-grid, .project-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
+}
 
-    .project-card {
-        padding: 1.25rem;
-    }
+/* Responsive Social Links */
+.social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-    /* Contact Form Adjustments */
+.social-links a {
+    margin: 0 10px;
+}
+
+/* Responsive Contact Section */
+@media screen and (max-width: 768px) {
     #contact {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1rem;
     }
 
     .contact-form-container {
-        padding: 2rem;
-        margin-top: 4rem;
-    }
-
-    .form-input, .form-textarea {
-        font-size: 1rem;
+        padding: 1rem;
+        margin-top: 2rem;
     }
 }
 
-/* For larger screens (desktop) */
-@media screen and (min-width: 1025px) {
-    .logo {
+/* Button Order for Mobile */
+@media screen and (max-width: 768px) {
+    .profile-description .btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn-download {
+        order: -1; /* Download button appears first */
+    }
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
         font-size: 1.5rem;
     }
 
-    .skills h2 {
-        font-size: 2.5rem;
-    }
-
-    .skill-item {
-        padding: 2rem;
-    }
-
-    .projects h2 {
-        font-size: 2.5rem;
-    }
-
-    .project-card {
-        padding: 1.5rem;
-    }
-
-    /* Contact Section */
-    #contact {
-        padding: 4rem 2rem;
-        text-align: center;
+    .typing-text, .typing-text-delay-1, .typing-text-delay-2 {
+        font-size: 0.9rem;
     }
 }
-
