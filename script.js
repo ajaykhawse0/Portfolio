@@ -2,7 +2,9 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 }
-
+document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    document.querySelector('nav').classList.toggle('active');
+});
 // Close menu when clicking outside
 document.addEventListener('click', function(event) {
     const nav = document.querySelector('nav');
